@@ -1,0 +1,12 @@
+*{
+    
+}
+body{
+    background-color: rgb(199, 218, 235);
+}
+section{
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    background-color: azure;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Application Form</h1>
+    <section class="upper-words">
+        
+    </section>
+    <form action="" name="submit-to-google-sheet">    
+        <div class="fieldsets">
+            <section class="main">
+                <p>Email</p>
+                <input type="email" name="Email" id="" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Phone Number</p>
+                <input type="number" name="Number" id="" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Name</p>
+                <input type="text" name="Name" id="" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>District of residency</p>
+                <input type="text" name="District" id="" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Your current level of Education</p>
+                <input type="checkbox" name="Level" id="" value="High School graduate">High School graduate
+                <input type="checkbox" name="Level" id="" value="Last year of college(university)">Last year of college(university)
+                <input type="checkbox" name="Level" id="" value="University graduate">University graduate
+
+            </section>
+            <section class="main">
+                <p>What did you study at university/High school</p>
+                <input type="text" name="Study" id="" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Gender</p>
+                <input type="checkbox" name="Gender" value="Female">Female
+                <input type="checkbox" name="Gender" value="Male">Male
+
+            </section>
+            <section class="main">
+                <p>What is your age range?</p>
+                <input type="checkbox" name="Age" value="18-25">18-25
+                <input type="checkbox" name="Age" value="26-30">26-30
+                <input type="checkbox" name="Age" value="30-35">30-35
+            </section>
+            <section class="main">
+                <p>Do you Consider yourself  as a person with a disability or other chronic conditions?</p>
+                <input type="checkbox" name="Disability" value="No">No
+                <input type="checkbox" name="Disability"value="Yes">Yes
+            </section>
+            <section class="main">
+                <p>If yes, Which one?</p>
+                <input type="text" name="Which" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Why do you wish to join SheCanCODE program? Please write in max 100 words:</p>
+                <input type="text" name="Wish" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>Why is software development your dream career/Job?
+                </p>
+                <input type="text" name="Dream" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p> Please explain how this program would help you to achieve your career goal</p>
+                <input type="text" name="Please" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p>CHOOSE your course Below?</p>
+                <input type="checkbox" name="Choose" value="Front-End">Front-End
+                <input type="checkbox" name="Choose" value="Back-End">Back-End
+            </section>
+            <section class="main">
+                <p>Do you have Github Account?</p>
+                <input type="checkbox" name="Have" value="Yes">Yes
+                <input type="checkbox" name="Have" value="No">No
+            </section>
+            <section class="main">
+                <p> If, yes share with us your account.</p>
+                <input type="text" name="Share" placeholder="Your answer">
+            </section>
+            <section class="main">
+                <p> Click this link so you can do English exam,<a href="https://docs.google.com/forms/d/1PSsVVIskg8dkHxW39n6_nFAX9W8ibJ2_9cbzcmyu09U/viewform?edit_requested=true">This your English assessment.</a></p>
+                <input type="checkbox" name="Test" value="Done">Done
+                <input type="checkbox" name="Test" value="Not Done">Not Done
+            </section>
+            <input type="submit" name="submit" id="">
+
+            
+            
+        </div>
+    </form>
+    <!-- -----------deploying--------------- -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxP8wxzHpwbsMDkBUzYISMMhygnuz_jXhX_QqI0RwJ2jtsuq3MiwMSIVxratF5FsOaqow/exec'
+        const form = document.forms['submit-to-google-sheet']
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    
+</body>
+</html>
